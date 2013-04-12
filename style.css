@@ -1,0 +1,115 @@
+/* Content Flip Style */
+.flipper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-perspective: 2000;
+}
+.flipper-page{
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.flipper-front,
+.flipper-back,
+.flipper-content {
+	box-sizing: border-box;
+
+    position: absolute;
+    height: 100%;
+    width:100%;
+    top: 0;
+    left: 0;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    overflow: hidden;
+}
+
+.flipper-front .flipper-content {
+	left: -100%;
+}
+
+.flipper-content {
+	padding:15px;
+	width:200%;
+}
+
+.flipper-front, .flipper-back {
+	width: 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flipper-back{
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.flipper > div.flipper-page:first-child,
+.flipper > div.flipper-page:first-child .flipper-back{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.flipper-item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background: #fff;
+}
+.overlay {
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+	-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: rgb(0,0,0);
+    opacity: 0;
+    /*transition: all 600ms ease-in-out;
+	-webkit-transition: all 600ms ease-in-out;*/
+}
+.middle {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
