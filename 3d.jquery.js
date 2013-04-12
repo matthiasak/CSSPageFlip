@@ -4,7 +4,7 @@ $(function(){
         $flipper = $('.flipper'),
         w = {width: $window.width(), height: $window.height()},
         $overlay = $('.overlay');
-    $window.on('mousemove', function(e){
+    $window.on('mousemove touchmove', function(e){
         var x = e.screenX,
             y = e.screenY,
             percent = x/w.width,
